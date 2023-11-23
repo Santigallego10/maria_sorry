@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La Novia Más Linda</title>
+  <style>
+    body {
+      background-color: #ffb3c1; /* Rosa pastel */
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+      transition: background-color 0.5s ease; /* Transición suave del color de fondo */
+    }
+
+    #titulo, #nuevoTitulo {
+      font-size: 24px;
+      color: #ff4d6b; /* Rosa más fuerte */
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    #nuevoTitulo {
+      display: none;
+    }
+
+    #gifContainer {
+      display: none;
+      position: relative;
+      text-align: center;
+    }
+
+    #gifContainer img {
+      max-width: 100%;
+      max-height: 200px; /* Ajusta la altura del GIF según sea necesario */
+      border-radius: 10px; /* Esquinas redondeadas */
+    }
+
+    #botones {
+      margin-top: 20px;
+      display: flex;
+    }
+
+    button {
+      background-color: #ff4d6b; /* Rosa más fuerte */
+      color: white;
+      padding: 10px 20px;
+      font-size: 16px;
+      margin-right: 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div id="titulo">¿Quién es la novia más linda y hermosa del mundo?</div>
+  <div id="nuevoTitulo">SIIIII TUUU MARIAAAA HERMOSA LUNITA DE MI VIDA</div>
+  <div id="gifContainer">
+    <!-- Puedes insertar tu gif aquí -->
+    <img id="miGif" src="./hi-love.gif" alt="GIF animado">
+  </div>
+  <div id="botones">
+    <button onclick="cambiarTitulo()">Maria</button>
+    <button onclick="cambiarTitulo()">Maria</button>
+  </div>
+
+  <script>
+    function cambiarTitulo() {
+      document.getElementById('titulo').style.display = 'none';
+      document.getElementById('nuevoTitulo').style.display = 'block';
+      document.getElementById('gifContainer').style.display = 'block';
+      document.getElementById('miGif').style.display = 'block';
+      cambiarFondo();
+    }
+
+    function cambiarFondo() {
+      let body = document.body;
+      let tonosRosa = ['#ffb3c1', '#ff9aae', '#ff819c', '#ff6889', '#ff4f76', '#ff3664'];
+
+      let i = 0;
+      setInterval(() => {
+        body.style.backgroundColor = tonosRosa[i];
+        i = (i + 1) % tonosRosa.length;
+      }, 500);
+    }
+  </script>
+</body>
+</html>
